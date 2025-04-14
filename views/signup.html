@@ -1,0 +1,23 @@
+<div>
+    <h2>Sign Up for Our Newsletter</h2>
+    <form name="signupForm" novalidate ng-submit="signUpCtrl.submit()">
+      <input type="text" name="firstName" placeholder="First Name" ng-model="signUpCtrl.user.firstName" required>
+      <div class="error" ng-show="signupForm.firstName.$touched && signupForm.firstName.$invalid">Required</div>
+  
+      <input type="text" name="lastName" placeholder="Last Name" ng-model="signUpCtrl.user.lastName" required>
+      <div class="error" ng-show="signupForm.lastName.$touched && signupForm.lastName.$invalid">Required</div>
+  
+      <input type="email" name="email" placeholder="Email" ng-model="signUpCtrl.user.email" required>
+      <div class="error" ng-show="signupForm.email.$touched && signupForm.email.$invalid">Valid email required</div>
+  
+      <input type="tel" name="phone" placeholder="Phone Number" ng-model="signUpCtrl.user.phone" required>
+      <div class="error" ng-show="signupForm.phone.$touched && signupForm.phone.$invalid">Required</div>
+  
+      <input type="text" name="favMenu" placeholder="Favorite Menu Number (e.g., L1)" ng-model="signUpCtrl.user.favMenu" required>
+      <div class="error" ng-show="signUpCtrl.invalidMenu">No such menu number exists.</div>
+  
+      <button type="submit">Submit</button>
+      <div class="success" ng-if="signUpCtrl.saved">Your information has been saved.</div>
+    </form>
+  </div>
+  
